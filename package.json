@@ -2,6 +2,7 @@
   "name": "boostcode",
   "displayName": "BoostCode",
   "description": "Boost your code speed",
+  "publisher": "quangvo09",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.59.0"
