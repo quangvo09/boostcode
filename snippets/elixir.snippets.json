@@ -1,0 +1,23 @@
+{
+  "BoostCode: Print log": {
+    "prefix": ["log", "inspect"],
+    "body": ["IO.inspect($1)$0"],
+    "description": "Print log"
+  },
+  "BoostCode: Validate": {
+    "prefix": ["validate"],
+    "body": ["${1:schema} = %{\n  \n}\nwith {:ok, valid_params} <- Tarams.cast(${3:params}, ${1:schema}) do\n  $0\nend"],
+    "description": "Validate",
+    "recursive": true
+  },
+  "BoostCode: Field Validate": {
+    "prefix": ["field validate"],
+    "body": ["${1:field}: ${2|:string,:integer|}$0"],
+    "description": "Validate field"
+  },
+  "BoostCode: Field Validate Required": {
+    "prefix": ["field validate required"],
+    "body": ["${1:field}: [type: ${2|:string,:integer|}, required: true]$0"],
+    "description": "Validate field required"
+  }
+}

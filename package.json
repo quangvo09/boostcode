@@ -6,7 +6,7 @@
   "version": "0.0.1",
   "icon": "images/icon.png",
   "engines": {
-    "vscode": "^1.59.0"
+    "vscode": "^1.58.0"
   },
   "categories": [
     "Snippets",
@@ -22,6 +22,12 @@
       {
         "command": "boostcode.sum",
         "title": "BoostCode: Sum"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "elixir",
+        "path": "snippets/elixir.snippets.json"
       }
     ]
   },
