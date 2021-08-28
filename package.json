@@ -15,18 +15,19 @@
   ],
   "activationEvents": [
     "onCommand:boostcode.sum",
-    "onCommand:boostcode.lines-to-array"
+    "onCommand:boostcode.lines-to-array",
+    "onCommand:boostcode.unique-lines"
   ],
   "main": "./extension.js",
   "contributes": {
     "commands": [
       {
         "command": "boostcode.sum",
-        "title": "BoostCode: Sum"
+        "title": "BoostCode: Sum - Sum numbers from selection"
       },
       {
-        "command": "boostcode.lines-to-array",
-        "title": "BoostCode: Lines to array"
+        "command": "boostcode.unique-lines",
+        "title": "BoostCode: Unique Lines - Keep unique lines from selection"
       }
     ],
     "snippets": [

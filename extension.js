@@ -28,9 +28,16 @@ function activate(context) {
     }, 0);
 
     // Show the result
-    editor.edit((editBuilder) => {
-      editBuilder.insert(selection.end, `\nSum: ${sum}`);
-    });
+    editor
+      .edit((editBuilder) => {
+        editBuilder.insert(selection.end, `\nSum: ${sum}`);
+      })
+      .then(() => {
+        editor.selection = new vscode.Selection(
+          editor.selection.end,
+          editor.selection.end
+        );
+      });
   });
 
   const linesToArrayCmd = vscode.commands.registerCommand(
@@ -67,14 +74,41 @@ function activate(context) {
           editBuilder.insert(selection.end, array.join("\n"));
           editBuilder.insert(selection.end, "\n]");
         })
-        .then((success) => {
-          console.log("success:", success);
+        .then(() => {
           editor.selection = new vscode.Selection(start, editor.selection.end);
         });
     }
   );
 
-  context.subscriptions.push(sumCmd, linesToArrayCmd);
+  const uniqueLinesCmd = vscode.commands.registerCommand(
+    "boostcode.unique-lines",
+    function () {
+      // The code you place here will be executed every time your command is executed
+      // Get the active text editor
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) return;
+
+      const document = editor.document;
+      const selection = editor.selection;
+
+      // Get the word within the selection
+      const lines = document.getText(selection).split("\n");
+      const uniqueLines = [];
+      for (const line of lines) {
+        if (!uniqueLines.includes(line)) {
+          uniqueLines.push(line);
+        }
+      }
+
+      // Show the result
+      editor.edit((editBuilder) => {
+        editBuilder.delete(editor.selection);
+        editBuilder.insert(selection.end, uniqueLines.join("\n"));
+      });
+    }
+  );
+
+  context.subscriptions.push(sumCmd, linesToArrayCmd, uniqueLinesCmd);
 }
 
 // this method is called when your extension is deactivated
