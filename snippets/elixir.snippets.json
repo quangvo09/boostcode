@@ -6,18 +6,88 @@
   },
   "BoostCode: Validate": {
     "prefix": ["validate"],
-    "body": ["${1:schema} = %{\n  \n}\nwith {:ok, valid_params} <- Tarams.cast(${3:params}, ${1:schema}) do\n  $0\nend"],
+    "body": [
+      "${1:schema} = %{\n  \n}\nwith {:ok, valid_params} <- Tarams.cast(${3:params}, ${1:schema}) do\n  $0\nend"
+    ],
     "description": "Validate",
     "recursive": true
   },
   "BoostCode: Field Validate": {
     "prefix": ["field validate"],
-    "body": ["${1:field}: ${2|:string,:integer|}$0"],
+    "body": [
+      "${1:field}: ${2|:string,:integer,:float,:boolean,:naive_datetime|}$0"
+    ],
     "description": "Validate field"
   },
   "BoostCode: Field Validate Required": {
     "prefix": ["field validate required"],
-    "body": ["${1:field}: [type: ${2|:string,:integer|}, required: true]$0"],
+    "body": [
+      "${1:field}: [type: ${2|:string,:integer,:float,:boolean,:naive_datetime|}, required: true]$0"
+    ],
     "description": "Validate field required"
+  },
+  "BoostCode: Now": {
+    "prefix": ["now"],
+    "body": [
+      "${1:now} = NaiveDateTime.utc_now() |> NaiveDateTime.truncate(:second)$0"
+    ],
+    "description": "Current time"
+  },
+  "BoostCode: Migration add new column": {
+    "prefix": ["migration alter add new column"],
+    "body": [
+      "alter table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
+      "  add(:${3:column_name}, ${4|:text,:integer,:float,:boolean,:map,:decimal,:date,:time,:naive_datetime|})$0",
+      "end"
+    ],
+    "description": "Migration add new column"
+  },
+  "BoostCode: Migration drop column": {
+    "prefix": ["migration alter drop column"],
+    "body": [
+      "alter table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
+      "  remove :${3:column_name}$0",
+      "end"
+    ],
+    "description": "Migration drop column"
+  },
+  "BoostCode: Migration create table": {
+    "prefix": ["migration alter add new table"],
+    "body": [
+      "create table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
+      "  $0",
+      "  ",
+      "  timestamps(default: fragment(\"NOW()\"))",
+      "end"
+    ],
+    "description": "Migration add new table"
+  },
+  "BoostCode: Migration drop table": {
+    "prefix": [
+      "migration drop table",
+      "migration delete table",
+      "migration remove table"
+    ],
+    "body": [
+      "drop table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|})$0"
+    ],
+    "description": "Migration drop table"
+  },
+  "BoostCode: Migration execute": {
+    "prefix": ["migration execute command"],
+    "body": ["execute(\"\"\"", "  $0", "\"\"\")"],
+    "description": "Migration execute command"
+  },
+  "BoostCode: Add new column": {
+    "prefix": ["add new column"],
+    "body": [
+      "add(:${3:column_name}, ${4|:text,:integer,:float,:boolean,:map,:decimal,:date,:time,:naive_datetime|})$0"
+    ],
+    "description": "Add new column"
+  },
+  "BoostCode: Drop column": {
+    "prefix": ["drop column"],
+    "body": ["remove :${1:column_name}$0"],
+    "description": "Add new column"
   }
 }

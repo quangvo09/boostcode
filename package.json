@@ -14,7 +14,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:boostcode.sum"
+    "onCommand:boostcode.sum",
+    "onCommand:boostcode.lines-to-array"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -22,6 +23,10 @@
       {
         "command": "boostcode.sum",
         "title": "BoostCode: Sum"
+      },
+      {
+        "command": "boostcode.lines-to-array",
+        "title": "BoostCode: Lines to array"
       }
     ],
     "snippets": [
