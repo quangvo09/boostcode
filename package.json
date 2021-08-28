@@ -26,6 +26,10 @@
         "title": "BoostCode: Sum - Sum numbers from selection"
       },
       {
+        "command": "boostcode.lines-to-array",
+        "title": "BoostCode: Lines to array - Convert selection to array"
+      },
+      {
         "command": "boostcode.unique-lines",
         "title": "BoostCode: Unique Lines - Keep unique lines from selection"
       }
