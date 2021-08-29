@@ -1,8 +1,15 @@
 {
-  "BoostCode: Print log": {
-    "prefix": ["log", "inspect"],
-    "body": ["IO.inspect($1)$0"],
+  "BoostCode: IO.inspect": {
+    "prefix": ["io", "ioi", "log"],
+    "body": ["IO.inspect(${1:variable})$0"],
     "description": "Print log"
+  },
+  "BoostCode: Inspect": {
+    "prefix": ["inspect", "iins"],
+    "body": [
+      "|> IO.inspect(label: \"🚀 ~ file: $TM_FILENAME ~ line $TM_LINE_NUMBER\")$0"
+    ],
+    "description": "Inspect"
   },
   "BoostCode: Validate": {
     "prefix": ["validate"],
@@ -26,7 +33,7 @@
     ],
     "description": "Validate field required"
   },
-  "BoostCode: Now": {
+  "BoostCode: Get current time": {
     "prefix": ["now"],
     "body": [
       "${1:now} = NaiveDateTime.utc_now() |> NaiveDateTime.truncate(:second)$0"
