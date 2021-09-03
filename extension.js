@@ -108,7 +108,88 @@ function activate(context) {
     }
   );
 
-  context.subscriptions.push(sumCmd, linesToArrayCmd, uniqueLinesCmd);
+  const commentLogCmd = vscode.commands.registerCommand(
+    "boostcode.comment-log",
+    function () {
+      // The code you place here will be executed every time your command is executed
+      // Get the active text editor
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) return;
+
+      const document = editor.document;
+      const totalLines = document.lineCount;
+
+      editor.edit((editBuilder) => {
+        for (let i = 0; i < totalLines - 1; i++) {
+          const line = document.lineAt(i);
+          if (/^\s*\|> IO.inspect\(label: "🚀 ~ file:/.test(line.text)) {
+            const str = line.text.replace(
+              /^(\s*)\|> IO.inspect(.*)/,
+              "$1# |> IO.inspect$2"
+            );
+            editBuilder.replace(line.range, str);
+          }
+        }
+      });
+    }
+  );
+
+  const uncommentLogCmd = vscode.commands.registerCommand(
+    "boostcode.uncomment-log",
+    function () {
+      // The code you place here will be executed every time your command is executed
+      // Get the active text editor
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) return;
+
+      const document = editor.document;
+      const totalLines = document.lineCount;
+
+      editor.edit((editBuilder) => {
+        for (let i = 0; i < totalLines - 1; i++) {
+          const line = document.lineAt(i);
+          if (/^\s*#\s*\|> IO.inspect\(label: "🚀 ~ file:/.test(line.text)) {
+            const str = line.text.replace(
+              /^(\s*)#(\s*)(\|> IO.inspect.*)/,
+              "$1$3"
+            );
+            editBuilder.replace(line.range, str);
+          }
+        }
+      });
+    }
+  );
+
+  const removeLogCmd = vscode.commands.registerCommand(
+    "boostcode.remove-log",
+    function () {
+      // The code you place here will be executed every time your command is executed
+      // Get the active text editor
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) return;
+
+      const document = editor.document;
+      const totalLines = document.lineCount;
+
+      editor.edit((editBuilder) => {
+        for (let i = 0; i < totalLines - 1; i++) {
+          const line = document.lineAt(i);
+          if (/^\s*#*\s*\|> IO.inspect\(label: "🚀 ~ file:/.test(line.text)) {
+            editBuilder.delete(line.range);
+          }
+        }
+      });
+    }
+  );
+
+  context.subscriptions.push(
+    sumCmd,
+    linesToArrayCmd,
+    uniqueLinesCmd,
+    commentLogCmd,
+    uncommentLogCmd,
+    removeLogCmd
+  );
 }
 
 // this method is called when your extension is deactivated

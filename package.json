@@ -3,7 +3,7 @@
   "displayName": "BoostCode",
   "description": "Boost your code speed",
   "publisher": "quangvo09",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.58.0"
@@ -14,9 +14,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:boostcode.sum",
-    "onCommand:boostcode.lines-to-array",
-    "onCommand:boostcode.unique-lines"
+    "*"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -32,12 +30,44 @@
       {
         "command": "boostcode.unique-lines",
         "title": "BoostCode: Unique Lines - Keep unique lines from selection"
+      },
+      {
+        "command": "boostcode.comment-log",
+        "title": "BoostCode: Comment logs - Comment all debug logs"
+      },
+      {
+        "command": "boostcode.uncomment-log",
+        "title": "BoostCode: Uncomment logs - Uncomment all debug logs"
+      },
+      {
+        "command": "boostcode.remove-log",
+        "title": "BoostCode: Remove logs - Remove all debug logs"
       }
     ],
     "snippets": [
       {
         "language": "elixir",
         "path": "snippets/elixir.snippets.json"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "boostcode.comment-log",
+        "key": "ctrl+shift+j",
+        "mac": "cmd+shift+j",
+        "when": "editorLangId == elixir"
+      },
+      {
+        "command": "boostcode.uncomment-log",
+        "key": "ctrl+shift+l",
+        "mac": "cmd+shift+l",
+        "when": "editorLangId == elixir"
+      },
+      {
+        "command": "boostcode.remove-log",
+        "key": "ctrl+shift+k",
+        "mac": "cmd+shift+k",
+        "when": "editorLangId == elixir"
       }
     ]
   },

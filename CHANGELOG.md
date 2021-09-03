@@ -1,9 +1,14 @@
-# Change Log
+# v0.0.4
 
-All notable changes to the "boostcode" extension will be documented in this file.
+### New commands
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+- Toggle, remove debug logs for `elixir`
 
-## [Unreleased]
+### New snippets
 
-- Initial release
+- Migration
+- Validation
+
+# v0.0.1
+
+First release with some commands and snippets
