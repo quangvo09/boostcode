@@ -45,7 +45,11 @@
       },
       {
         "command": "boostcode.format-json",
-        "title": "BoostCode: Format JSON current selection"
+        "title": "BoostCode: Format JSON for current selection"
+      },
+      {
+        "command": "boostcode.format-xml",
+        "title": "BoostCode: Format XML for current selection"
       }
     ],
     "snippets": [
@@ -82,10 +86,10 @@
     "publish": "vsce publish"
   },
   "devDependencies": {
-    "@types/vscode": "^1.58.0",
     "@types/glob": "^7.1.3",
     "@types/mocha": "^8.2.2",
     "@types/node": "14.x",
+    "@types/vscode": "^1.58.0",
     "eslint": "^7.27.0",
     "glob": "^7.1.7",
     "mocha": "^8.4.0",
@@ -99,5 +103,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/quangvo09/boostcode.git"
+  },
+  "dependencies": {
+    "xml-formatter": "^2.5.1"
   }
 }

@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 const { Position } = require("vscode");
 const vscode = require("vscode");
+var xmlFormatter = require("xml-formatter");
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
@@ -207,6 +208,37 @@ function activate(context) {
       }
     }
   );
+
+  const formatXmlCmd = vscode.commands.registerCommand(
+    "boostcode.format-xml",
+    function () {
+      const editor = vscode.window.activeTextEditor;
+      if (!editor) return;
+
+      const document = editor.document;
+      const selection = editor.selection;
+
+      // Get the word within the selection
+      try {
+        const text = document.getText(selection).replace(/>\s+</gm, "><");
+        const formatted = xmlFormatter(text, {
+          indentation: " ",
+          collapseContent: true,
+          lineSeparator: "\n",
+        });
+        // Show the result
+        editor.edit((editBuilder) => {
+          editBuilder.delete(editor.selection);
+          editBuilder.insert(selection.end, formatted);
+        });
+      } catch (err) {
+        vscode.window.showInformationMessage(
+          "Selected text is not correct xml format"
+        );
+      }
+    }
+  );
+
   context.subscriptions.push(
     sumCmd,
     linesToArrayCmd,
@@ -214,7 +246,8 @@ function activate(context) {
     commentLogCmd,
     uncommentLogCmd,
     removeLogCmd,
-    formatJsonCmd
+    formatJsonCmd,
+    formatXmlCmd
   );
 }
 
