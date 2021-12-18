@@ -42,6 +42,10 @@
       {
         "command": "boostcode.remove-log",
         "title": "BoostCode: Remove logs - Remove all debug logs"
+      },
+      {
+        "command": "boostcode.format-json",
+        "title": "BoostCode: Format JSON current selection"
       }
     ],
     "snippets": [
