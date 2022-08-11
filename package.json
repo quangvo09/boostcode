@@ -50,6 +50,10 @@
       {
         "command": "boostcode.format-xml",
         "title": "BoostCode: Format XML for current selection"
+      },
+      {
+        "command": "boostcode.unique-csv-lines",
+        "title": "BoostCode: Merge CSV lines same first column"
       }
     ],
     "snippets": [
