@@ -37,7 +37,7 @@ const cmd = vscode.commands.registerCommand(
         uniqueLines[rowIndex] = mergedRow
       } else {
         uniqueLines.push(line);
-        columnMap[uniqueColumn] = index
+        columnMap[uniqueColumn] = uniqueLines.length - 1
       }
     }
 
