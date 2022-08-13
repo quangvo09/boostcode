@@ -11,12 +11,17 @@ To help you code max speed :D
 
 ## Commands
 
-| Languages | Commandd        | Key binding           | Description                         |
-| :-------- | :-------------- | :-------------------- | :---------------------------------- |
-| All       | `Sum`           |                       | Sum all number of current selection |
-| Elixir    | `Comment Log`   | `CMD` + `SHIFT` + `J` | Comment all debug logs              |
-| Elixir    | `Uncomment Log` | `CMD` + `SHIFT` + `L` | Uncomment all debug logs            |
-| Elixir    | `Remove Log`    | `CMD` + `SHIFT` + `K` | Remove all debug logs               |
+| Languages | Commandd         | Key binding           | Description                                  |
+| :-------- | :--------------- | :-------------------- | :------------------------------------------- |
+| All       | `Sum`            |                       | Sum all number of current selection          |
+| Elixir    | `Comment Log`    | `CMD` + `SHIFT` + `J` | Comment all debug logs                       |
+| Elixir    | `Uncomment Log`  | `CMD` + `SHIFT` + `L` | Uncomment all debug logs                     |
+| Elixir    | `Remove Log`     | `CMD` + `SHIFT` + `K` | Remove all debug logs                        |
+| All       | `Unique lines`   |                       | Remove duplicated lines in current selection |
+| All       | `Merge CSV rows` |                       | Merge CSV rows same first column             |
+| All       | `Format XML`     |                       | Format XML for current selection             |
+| All       | `Format JSON`    |                       | Format JSON for current selection            |
+| All       | `Lines to array` |                       | Convert selection to array                   |
 
 ## Icons
 

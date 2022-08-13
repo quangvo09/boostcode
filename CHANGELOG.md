@@ -1,3 +1,6 @@
+# v0.0.8
+- Add new command merge CSV rows
+
 # v0.0.4
 
 ### New commands
