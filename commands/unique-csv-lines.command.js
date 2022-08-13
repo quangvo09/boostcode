@@ -11,13 +11,12 @@ const cmd = vscode.commands.registerCommand(
     const document = editor.document;
     const lines = document.getText().split("\n");
     
-    let index = -1;
     const uniqueLines = [];
     const columnMap = {}
     for (const line of lines) {
-      index++;
+      const length = uniqueLines.length
 
-      if (index == 0) {
+      if (length == 0) {
         uniqueLines.push(line);
         continue;
       }
@@ -25,9 +24,9 @@ const cmd = vscode.commands.registerCommand(
       const columns = line.split(",");
       const uniqueColumn = columns[0]
 
-      if (index == 1) {
+      if (length == 1) {
         uniqueLines.push(line);
-        columnMap[uniqueColumn] = index
+        columnMap[uniqueColumn] = length
         continue;
       }
 
@@ -37,7 +36,7 @@ const cmd = vscode.commands.registerCommand(
         uniqueLines[rowIndex] = mergedRow
       } else {
         uniqueLines.push(line);
-        columnMap[uniqueColumn] = index
+        columnMap[uniqueColumn] = length
       }
     }
 
