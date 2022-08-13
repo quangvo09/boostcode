@@ -3,7 +3,7 @@
   "displayName": "BoostCode",
   "description": "Boost your code speed",
   "publisher": "quangvo09",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.58.0"
