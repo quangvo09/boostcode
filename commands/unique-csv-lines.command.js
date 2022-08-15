@@ -50,8 +50,8 @@ const cmd = vscode.commands.registerCommand(
 );
 
 const mergeRows = (row1, row2) => {
-  const firstColumns = row1.split(",")
-  const secondColumns = row2.split(",")
+  const firstColumns = row1.trim().split(",")
+  const secondColumns = row2.trim().split(",")
   const length = Math.max(firstColumns.length, secondColumns.length)
   const columns = []
 
@@ -61,4 +61,5 @@ const mergeRows = (row1, row2) => {
 
   return columns.join(",")
 }
+
 module.exports = cmd
