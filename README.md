@@ -1,3 +1,7 @@
+## Extension
+
+BoostCode: https://marketplace.visualstudio.com/items?itemName=quangvo09.boostcode
+
 ## Features
 
 To help you code max speed :D
