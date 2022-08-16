@@ -60,6 +60,10 @@
       {
         "language": "elixir",
         "path": "snippets/elixir.snippets.json"
+      },
+      {
+        "language": "go",
+        "path": "snippets/go.snippets.json"
       }
     ],
     "keybindings": [
