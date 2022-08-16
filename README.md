@@ -8,10 +8,11 @@ To help you code max speed :D
 
 ## Snippets
 
-| Languages | Prefix             | Description                   |
-| :-------- | :----------------- | :---------------------------- |
-| Elixir    | `io`, `ioi`, `log` | Add `IO.inspect`              |
-| Elixir    | `inspect`, `iisn`  | Add pipe `inspect` with label |
+| Languages | Prefix                     | Description                   |
+| :-------- | :------------------------- | :---------------------------- |
+| Elixir    | `io`, `ioi`, `log`         | Add `IO.inspect`              |
+| Elixir    | `inspect`, `iisn`          | Add pipe `inspect` with label |
+| Go        | `print`, `inspect`, `iisn` | Add `fmt.Printf` with label   |
 
 ## Commands
 
