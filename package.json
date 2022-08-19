@@ -28,6 +28,10 @@
         "title": "BoostCode: Inspect - Print current selection"
       },
       {
+        "command": "boostcode.remove-inspect",
+        "title": "BoostCode: Remove Inspect - Remove all inspects"
+      },
+      {
         "command": "boostcode.lines-to-array",
         "title": "BoostCode: Lines to array - Convert selection to array"
       },
@@ -97,6 +101,12 @@
         "command": "boostcode.inspect",
         "key": "ctrl+shift+d",
         "mac": "cmd+shift+d",
+        "when": "editorLangId == go || editorLangId == python"
+      },
+      {
+        "command": "boostcode.remove-inspect",
+        "key": "ctrl+shift+k",
+        "mac": "cmd+shift+k",
         "when": "editorLangId == go || editorLangId == python"
       }
     ]

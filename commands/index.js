@@ -8,6 +8,7 @@ const formatJsonCmd = require('./format-json.command')
 const formatXmlCmd = require('./format-xml.command')
 const uniqueCsvLinesCmd = require('./unique-csv-lines.command')
 const inspectCmd = require('./inspect.command')
+const removeInspectCmd = require('./remove-inspect.command')
 
 module.exports.commands = [
   sumCmd,
@@ -20,4 +21,5 @@ module.exports.commands = [
   formatXmlCmd,
   uniqueCsvLinesCmd,
   inspectCmd,
+  removeInspectCmd
 ]
