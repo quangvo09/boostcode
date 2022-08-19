@@ -24,11 +24,7 @@
         "title": "BoostCode: Sum - Sum numbers from selection"
       },
       {
-        "command": "boostcode.python.inspect",
-        "title": "BoostCode: Inspect - Print current selection"
-      },
-      {
-        "command": "boostcode.go.inspect",
+        "command": "boostcode.inspect",
         "title": "BoostCode: Inspect - Print current selection"
       },
       {
@@ -98,16 +94,10 @@
         "when": "editorLangId == elixir"
       },
       {
-        "command": "boostcode.python.inspect",
+        "command": "boostcode.inspect",
         "key": "ctrl+shift+d",
         "mac": "cmd+shift+d",
-        "when": "editorLangId == python"
-      },
-      {
-        "command": "boostcode.go.inspect",
-        "key": "ctrl+shift+d",
-        "mac": "cmd+shift+d",
-        "when": "editorLangId == go"
+        "when": "editorLangId == go || editorLangId == python"
       }
     ]
   },

@@ -1,7 +1,7 @@
 const vscode = require("vscode");
 
 const cmd = vscode.commands.registerCommand(
-  "boostcode.go.inspect",
+  "boostcode.inspect",
   function () {
     const editor = vscode.window.activeTextEditor;
     if (!editor) return;
@@ -19,7 +19,10 @@ const cmd = vscode.commands.registerCommand(
     try {
       const lineNumber = selection.start.line
       const fileName = document.fileName.split("/").reverse()[0]
-      const logText = `\nfmt.Printf(\"🚀 Boostcode ~ file: ${fileName} ~ line ${lineNumber + 2}\, [${text}] = %+v", ${text})`
+      const logText = buildLogText(document.languageId, fileName, lineNumber, text)
+      
+      if (!logText) return
+
       editor.edit((editBuilder) => {
         const line = document.lineAt(lineNumber);
         editBuilder.insert(line.range.end, logText);
@@ -34,5 +37,17 @@ const cmd = vscode.commands.registerCommand(
     }
   }
 );
+
+const buildLogText = (languageId, fileName, lineNumber, text) => {
+  switch (languageId) {
+    case "go": 
+      return `\nfmt.Printf(\"🚀 Boostcode ~ file: ${fileName} ~ line ${lineNumber + 2}\, [${text}] = %+v", ${text})`
+
+    case "python": 
+      return `\nprint(\"🚀 Boostcode ~ file: ${fileName} ~ line ${lineNumber + 2}\, [${text}] = ", ${text})`
+  }
+
+  return null
+}
 
 module.exports = cmd
