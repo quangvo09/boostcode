@@ -13,6 +13,7 @@ To help you code max speed :D
 | Elixir    | `io`, `ioi`, `log`         | Add `IO.inspect`              |
 | Elixir    | `inspect`, `iisn`          | Add pipe `inspect` with label |
 | Go        | `print`, `inspect`, `iisn` | Add `fmt.Printf` with label   |
+| Python    | `print`, `inspect`, `iisn` | Add `print` with label        |
 
 ## Commands
 

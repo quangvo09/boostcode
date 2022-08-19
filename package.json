@@ -64,6 +64,10 @@
       {
         "language": "go",
         "path": "snippets/go.snippets.json"
+      },
+      {
+        "language": "python",
+        "path": "snippets/python.snippets.json"
       }
     ],
     "keybindings": [
