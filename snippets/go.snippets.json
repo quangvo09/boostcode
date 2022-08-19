@@ -2,7 +2,7 @@
   "BoostCode: Inspect": {
     "prefix": ["print", "inspect", "iins"],
     "body": [
-      "fmt.Printf(\"🚀 ~ file: $TM_FILENAME ~ line $TM_LINE_NUMBER, value = %+v\", $0)"
+      "fmt.Printf(\"🚀 Boostcode ~ file: $TM_FILENAME ~ line $TM_LINE_NUMBER, value = %+v\", $0)"
     ],
     "description": "Inspect"
   }

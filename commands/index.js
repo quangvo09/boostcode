@@ -7,6 +7,7 @@ const removeLogCmd = require('./remove-log.command')
 const formatJsonCmd = require('./format-json.command')
 const formatXmlCmd = require('./format-xml.command')
 const uniqueCsvLinesCmd = require('./unique-csv-lines.command')
+const inspectPythonCmd = require('./inspect.python.command')
 
 module.exports.commands = [
   sumCmd,
@@ -17,5 +18,6 @@ module.exports.commands = [
   removeLogCmd,
   formatJsonCmd,
   formatXmlCmd,
-  uniqueCsvLinesCmd
+  uniqueCsvLinesCmd,
+  inspectPythonCmd
 ]

@@ -24,6 +24,10 @@
         "title": "BoostCode: Sum - Sum numbers from selection"
       },
       {
+        "command": "boostcode.python.inspect",
+        "title": "BoostCode: Inspect - Print current selection"
+      },
+      {
         "command": "boostcode.lines-to-array",
         "title": "BoostCode: Lines to array - Convert selection to array"
       },
@@ -88,6 +92,12 @@
         "key": "ctrl+shift+k",
         "mac": "cmd+shift+k",
         "when": "editorLangId == elixir"
+      },
+      {
+        "command": "boostcode.python.inspect",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d",
+        "when": "editorLangId == python"
       }
     ]
   },

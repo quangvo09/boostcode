@@ -14,7 +14,7 @@ const cmd = vscode.commands.registerCommand(
     editor.edit((editBuilder) => {
       for (let i = 0; i < totalLines - 1; i++) {
         const line = document.lineAt(i);
-        if (/^\s*\|> IO.inspect\(label: "🚀 ~ file:/.test(line.text)) {
+        if (/^\s*\|> IO.inspect\(label: "🚀 Boostcode ~ file:/.test(line.text)) {
           const str = line.text.replace(
             /^(\s*)\|> IO.inspect(.*)/,
             "$1# |> IO.inspect$2"

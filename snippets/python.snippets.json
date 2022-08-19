@@ -2,7 +2,7 @@
   "BoostCode: Inspect": {
     "prefix": ["print", "inspect", "iins"],
     "body": [
-      "print(\"🚀 ~ file: $TM_FILENAME ~ line $TM_LINE_NUMBER\", $0)"
+      "print(\"🚀 Boostcode ~ file: $TM_FILENAME ~ line $TM_LINE_NUMBER\", $0)"
     ],
     "description": "Inspect"
   }

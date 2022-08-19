@@ -7,7 +7,7 @@
   "BoostCode: Inspect": {
     "prefix": ["inspect", "iins"],
     "body": [
-      "|> IO.inspect(label: \"🚀 ~ file: $TM_FILENAME ~ line $TM_LINE_NUMBER\")$0"
+      "|> IO.inspect(label: \"🚀 Boostcode ~ file: $TM_FILENAME ~ line $TM_LINE_NUMBER\")$0"
     ],
     "description": "Inspect"
   },
