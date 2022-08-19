@@ -28,6 +28,10 @@
         "title": "BoostCode: Inspect - Print current selection"
       },
       {
+        "command": "boostcode.go.inspect",
+        "title": "BoostCode: Inspect - Print current selection"
+      },
+      {
         "command": "boostcode.lines-to-array",
         "title": "BoostCode: Lines to array - Convert selection to array"
       },
@@ -98,6 +102,12 @@
         "key": "ctrl+shift+d",
         "mac": "cmd+shift+d",
         "when": "editorLangId == python"
+      },
+      {
+        "command": "boostcode.go.inspect",
+        "key": "ctrl+shift+d",
+        "mac": "cmd+shift+d",
+        "when": "editorLangId == go"
       }
     ]
   },
