@@ -18,9 +18,10 @@ const cmd = vscode.commands.registerCommand(
 
     try {
       const lineNumber = selection.start.line
-      const line = document.lineAt(lineNumber);
-      const logText = `\nprint(\"🚀 Boostcode ~ file: ${document.fileName} ~ line ${selection.start.line + 2}\, ${text} = ", ${text})`
+      const fileName = document.fileName.split("/").reverse()[0]
+      const logText = `\nprint(\"🚀 Boostcode ~ file: ${fileName} ~ line ${lineNumber + 2}\, [${text}] = ", ${text})`
       editor.edit((editBuilder) => {
+        const line = document.lineAt(lineNumber);
         editBuilder.insert(line.range.end, logText);
       }).then(() => {
         const currentPosition = document.lineAt(lineNumber +1).range.end
