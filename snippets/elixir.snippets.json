@@ -43,7 +43,7 @@
   "BoostCode: Migration add new column": {
     "prefix": ["migration alter add new column"],
     "body": [
-      "alter table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
+      "alter table(:${1:table_name}, prefix: ${2|:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
       "  add(:${3:column_name}, ${4|:text,:integer,:float,:boolean,:map,:decimal,:date,:time,:naive_datetime|})$0",
       "end"
     ],
@@ -52,7 +52,7 @@
   "BoostCode: Migration drop column": {
     "prefix": ["migration alter drop column"],
     "body": [
-      "alter table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
+      "alter table(:${1:table_name}, prefix: ${2|:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
       "  remove :${3:column_name}$0",
       "end"
     ],
@@ -61,7 +61,7 @@
   "BoostCode: Migration create table": {
     "prefix": ["migration alter add new table"],
     "body": [
-      "create table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
+      "create table(:${1:table_name}, prefix: ${2|:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|}) do",
       "  $0",
       "  ",
       "  timestamps(default: fragment(\"NOW()\"))",
@@ -76,7 +76,7 @@
       "migration remove table"
     ],
     "body": [
-      "drop table(:${1:table_name}, prefix: ${2|:onpoint,:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|})$0"
+      "drop table(:${1:table_name}, prefix: ${2|:auth,:django,:ecomobi,:eton,:finance,:ghn,:integrations,:landing,:lazada,:loship,:sendo,:shopee,:tiki,:vault,:verk,:vinculum|})$0"
     ],
     "description": "Migration drop table"
   },
