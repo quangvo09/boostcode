@@ -45,6 +45,12 @@ const buildLogText = (languageId, fileName, lineNumber, text) => {
 
     case "python": 
       return `\nprint(\"🚀 Boostcode ~ file: ${fileName} ~ line ${lineNumber + 2}\, [${text}] = ", ${text})`
+
+    case "javascript":
+    case "typescript":
+    case "javascriptreact":
+    case "typescriptreact":
+      return `\nconsole.log(\"🚀 Boostcode ~ file: ${fileName} ~ line ${lineNumber + 2}\, [${text}] = ", ${text})`
   }
 
   return null

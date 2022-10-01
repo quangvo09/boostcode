@@ -101,7 +101,7 @@
         "command": "boostcode.inspect",
         "key": "ctrl+shift+d",
         "mac": "cmd+shift+d",
-        "when": "editorLangId == go || editorLangId == python"
+        "when": "editorLangId == go || editorLangId == python || editorLangId =~ /^javascript|^typescript/"
       },
       {
         "command": "boostcode.remove-inspect",
