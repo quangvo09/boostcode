@@ -62,6 +62,10 @@
       {
         "command": "boostcode.unique-csv-lines",
         "title": "BoostCode: Merge CSV lines same first column"
+      },
+      {
+        "command": "boostcode.csv-to-json",
+        "title": "BoostCode: Convert CSV to JSON for current selection"
       }
     ],
     "snippets": [
@@ -125,6 +129,7 @@
     "eslint": "^7.27.0",
     "glob": "^7.1.7",
     "mocha": "^8.4.0",
+    "papaparse": "^5.4.1",
     "typescript": "^4.3.2",
     "vscode-test": "^1.5.2"
   },
