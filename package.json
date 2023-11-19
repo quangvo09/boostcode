@@ -80,6 +80,10 @@
       {
         "language": "python",
         "path": "snippets/python.snippets.json"
+      },
+      {
+        "language": "typescript",
+        "path": "snippets/typescript.snippets.json"
       }
     ],
     "keybindings": [

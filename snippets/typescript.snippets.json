@@ -1,0 +1,21 @@
+{
+  "BoostCode: Resolver": {
+    "prefix": ["GraplQL resolvers", "grs"],
+    "body": [
+      "const resolvers = {",
+      "  ${1|Query,Mutation,Subscription|}: {",
+      "    ${2:functionName}: async (",
+      "      _parent: unknown,",
+      "      args: ${3|unknown|},",
+      "      context: ${4|unknown|}",
+      "    ): Promise<${5|any|}> => {",
+      "      $0",
+      "    },",
+      "  },",
+      "};",
+      "",
+      "export default resolvers;"
+    ],
+    "description": "GraplQL resolvers"
+  }
+}
