@@ -3,7 +3,7 @@
   "displayName": "BoostCode",
   "description": "Boost your code speed",
   "publisher": "quangvo09",
-  "version": "0.0.22",
+  "version": "0.0.24",
   "icon": "images/icon.png",
   "engines": {
     "vscode": "^1.58.0"
@@ -66,6 +66,10 @@
       {
         "command": "boostcode.csv-to-json",
         "title": "BoostCode: Convert CSV to JSON for current selection"
+      },
+      {
+        "command": "boostcode.add-cursors",
+        "title": "BoostCode: Add Cursors - Add cursors for all text matches of current selection"
       }
     ],
     "snippets": [
@@ -116,6 +120,12 @@
         "key": "ctrl+shift+k",
         "mac": "cmd+shift+k",
         "when": "editorLangId == go || editorLangId == python || editorLangId =~ /^javascript|^typescript/"
+      },
+      {
+        "command": "boostcode.add-cursors",
+        "key": "ctrl+shift+i",
+        "mac": "ctrl+shift+i",
+        "when": "editorTextFocus"
       }
     ]
   },

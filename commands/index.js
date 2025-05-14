@@ -10,6 +10,7 @@ const uniqueCsvLinesCmd = require("./unique-csv-lines.command");
 const inspectCmd = require("./inspect.command");
 const removeInspectCmd = require("./remove-inspect.command");
 const csvToJsonCmd = require("./csv-to-json.command");
+const addCursorsCmd = require("./add-cursors.command");
 
 module.exports.commands = [
   sumCmd,
@@ -24,4 +25,5 @@ module.exports.commands = [
   inspectCmd,
   removeInspectCmd,
   csvToJsonCmd,
+  addCursorsCmd,
 ];
